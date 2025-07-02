@@ -1,6 +1,7 @@
 import google.generativeai as genai
 
-genai.configure(api_key="AIzaSyCT6eoTg9vCs6y0NudVlBDAwDbx9cPHj34")
+import os
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 def natural_to_sql(prompt):
     model = genai.GenerativeModel("gemini-pro")
